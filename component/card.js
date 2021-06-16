@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function card({ content, className, isBottom }) {
 	return (
 		<article className={className}>
-			<Link href={`/entry/:${content.id}`}>
+			<Link href={`/entry/${content.id}`}>
 				<a>
 					{!isBottom && <img src={content.imageSource} />}
 					<div>
