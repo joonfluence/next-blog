@@ -14,7 +14,7 @@ export default function nav() {
 			<ul className={styles.nav}>
 				<Link href="/">
 					<h1>
-						<a>인생은 속도가 아니라 방향이다.</a>
+						<a>blog title.</a>
 					</h1>
 				</Link>
 				{/* TODO: 버튼 클릭 시 새로운 화면 보여줄 것 */}
