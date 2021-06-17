@@ -1,13 +1,8 @@
+import React from "react";
 import { useState } from "react";
-import styles from "../styles/Home.module.css";
-import Card from "../component/card";
-import AppLayout from "../component/AppLayout";
-import Button from "../component/Button";
-import { Grid } from "@material-ui/core";
-import Link from "next/link";
+import styles from "../../styles/Home.module.css";
 
-export default function Home() {
-	// TODO: lint 줄바꿈 error 수정
+export default function TopSection() {
 	const [post, setPost] = useState([
 		{
 			id: 112412451513,
@@ -75,39 +70,13 @@ export default function Home() {
 		},
 	]);
 	return (
-		<AppLayout className={styles.container}>
-			<main id="main" className={styles.main}>
-				<h4>전체 글</h4>
-				<section id="content-top" className={styles.section__Top}>
-					<div>
-						<h4>인기글</h4>
-						<Grid container spacing={1}>
-							{post.map((item) => (
-								<Card
-									sm={3}
-									key={item.id}
-									content={item}
-									className={styles.article__Top}
-								/>
-							))}
-						</Grid>
-					</div>
-				</section>
-				<section id="content-bottom" className={styles.section__Bottom}>
-					<div>
-						<Grid container spacing={1}>
-							{post.map((item) => (
-								<Card
-									key={item.id}
-									content={item}
-									isBottom={true}
-									className={styles.article__Bottom}
-								/>
-							))}
-						</Grid>
-					</div>
-				</section>
-			</main>
-		</AppLayout>
+		<div>
+			<section id="content-top" className={styles.section__Top}>
+				{/* <Button /> */}
+				{post.map((item) => (
+					<Card key={item.id} content={item} className={styles.article__Top} />
+				))}
+			</section>
+		</div>
 	);
 }

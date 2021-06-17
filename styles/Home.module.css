@@ -1,5 +1,5 @@
 .wrapper {
-  margin: 0px 24px 0 24px;
+  /* margin: 0px 24px 0 24px; */
   /* padding-bottom: 10px; */
 }
 
@@ -85,6 +85,8 @@
 }
 
 .section__Top {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   border-bottom: 1px solid #eaeaea;
 }
@@ -101,12 +103,12 @@
   /* background-color: yellow; */
 }
 
-.article__Bottom {
-  display: block;
+.article__Bottom a {
+  display: flex;
 }
 
-.article__Bottom a div p {
-  overflow-wrap: break-word;
+.article__Bottom a div:nth-child(2) {
+  flex-basis: 80%;
 }
 
 .section__Bottom {

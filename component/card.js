@@ -1,20 +1,21 @@
 import React from "react";
 import Link from "next/link";
+import { Grid } from "@material-ui/core";
 
-export default function card({ content, className, isBottom }) {
+export default function card({ content, className, isBottom, sm }) {
 	return (
-		<article className={className}>
+		<Grid item xs={12} sm={sm} className={className}>
 			<Link href={`/entry/${content.id}`}>
 				<a>
-					{!isBottom && <img src={content.imageSource} />}
+					<div>{!isBottom && <img src={content.imageSource} />}</div>
 					<div>
-						<div>{content.title}</div>
-						{isBottom && <p>{content.content}</p>}
-						<div>{content.createdAt}</div>
+						<h4>{content.title}</h4>
+						<div>{isBottom && content.content}</div>
+						{content.createdAt}
 					</div>
-					{isBottom && <img src={content.imageSource} />}
+					<div>{isBottom && <img src={content.imageSource} />}</div>
 				</a>
 			</Link>
-		</article>
+		</Grid>
 	);
 }
