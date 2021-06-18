@@ -3,8 +3,6 @@ import styles from "../styles/Home.module.css";
 import Card from "../component/card";
 import AppLayout from "../component/AppLayout";
 import Button from "../component/Button";
-import { Grid } from "@material-ui/core";
-import Link from "next/link";
 
 export default function Home() {
 	// TODO: lint 줄바꿈 error 수정
@@ -79,19 +77,14 @@ export default function Home() {
 			<main id="main" className={styles.main}>
 				<h4>전체 글</h4>
 				<section id="content-top" className={styles.section__Top}>
-					<div>
-						<h4>인기글</h4>
-						<Grid container spacing={1}>
-							{post.map((item) => (
-								<Card
-									sm={3}
-									key={item.id}
-									content={item}
-									className={styles.article__Top}
-								/>
-							))}
-						</Grid>
-					</div>
+					{/* <Button /> */}
+					{post.map((item) => (
+						<Card
+							key={item.id}
+							content={item}
+							className={styles.article__Top}
+						/>
+					))}
 				</section>
 				<section id="content-bottom" className={styles.section__Bottom}>
 					<div>
