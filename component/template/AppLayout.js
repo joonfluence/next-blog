@@ -1,7 +1,7 @@
 import React from "react";
-import Nav from "./nav";
-import styles from "../styles/Home.module.css";
-import MenuArea from "./menuArea";
+import Nav from "../nav";
+import styles from "../../styles/Home.module.css";
+import MenuArea from "../menuArea";
 
 export default function AppLayout({ children }) {
 	return (
@@ -20,9 +20,8 @@ export default function AppLayout({ children }) {
 					<MenuArea />
 				</div>
 			</header>
-			{/* Children / Content 입구 */}
 			{/* TODO: onClick -> display: None */}
-			<div className={styles.container}>{children}</div>
+			<main className={styles.container}>{children}</main>
 			{/* TODO: onClick -> display: None */}
 			<footer id="footer" className={styles.footer}>
 				footer 입니다.

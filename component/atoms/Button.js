@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
-import theme from "../styles/theme";
+import theme from "../../styles/theme";
 
 const StyledButton = styled(Button)``;
 
