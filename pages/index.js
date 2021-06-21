@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
 import AppLayout from "../component/template/AppLayout";
-import ContentList from "../component/organisms/contentList";
+import ContentList from "../component/organisms/ContentList";
 
 export default function Home() {
 	return (
