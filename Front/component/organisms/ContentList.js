@@ -8,16 +8,7 @@ import ContentsStore from "../../store/ContentsStore";
 export default function ContentList({ id, className, isBottom, listName }) {
 	const [post, setPost] = useState([]);
 	useEffect(async () => {
-		// console.log(await ContentsStore.fetchFlowList());
-		// console.log(ContentsStore.fetchList());
-		// console.log(ContentsStore._contentList.get());
-		// setPost(await ContentsStore.fetchList());
-	}, []);
-
-	useEffect(async () => {
-		// console.log(await ContentsStore.fetchFlowList());
 		setPost(await ContentsStore.getList());
-		// console.log(ContentsStore.contentList);
 	}, []);
 
 	return (

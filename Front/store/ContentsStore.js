@@ -1,4 +1,4 @@
-import { action, makeAutoObservable, observable } from "mobx";
+import { makeAutoObservable, observable } from "mobx";
 import { getContentsList } from "../pages/_api";
 
 class ContentStore {
@@ -16,11 +16,11 @@ class ContentStore {
 		this._contentList.set(initialState);
 	}
 
-	async fetchList() {
-		this._contentList.set(await getContentsList());
-		// return await getContentsList();
-		return this._contentList.get();
-	}
+	// async fetchList() {
+	// 	this._contentList.set(await getContentsList());
+	// 	// return await getContentsList();
+	// 	return this._contentList.get();
+	// }
 
 	async getList() {
 		this.state = "pending";

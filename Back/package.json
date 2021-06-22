@@ -1,0 +1,18 @@
+{
+  "name": "joonlog-dummy-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:client": "cd ../Front && yarn dev",
+    "dev:server": "json-server --watch db.json --port 5000",
+    "dev": "concurrently \"yarn dev:server\" \"yarn dev:client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "json-server": "^0.16.3"
+  }
+}
