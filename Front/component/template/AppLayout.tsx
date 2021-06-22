@@ -5,7 +5,7 @@ import MenuArea from "../menuArea";
 
 export default function AppLayout({ children }) {
 	return (
-		<div container className={styles.wrapper}>
+		<div className={styles.wrapper}>
 			<p className={styles.webAccess}>
 				<a href="#content-bottom">하위 본문으로 이동</a>
 			</p>
