@@ -1,5 +1,5 @@
 { 
-  "contentList" : [
+  "List" : [
     {
       "id": 1,
       "title": "6월 15일 TIL",
@@ -107,10 +107,10 @@
           "title": "TIL"
         }
     },
-    "content":
-       "loremloremloremloremloremloremlorem loremloremloremloremloremloremloremloremlorem oremloremloremloremloremloremlorem loremloremloremloremloremloremloremloremlorem",
-        "createdAt": "2021/02/11",
-        "imageSource": "https://via.placeholder.com/100x100"
+      "content":
+        "loremloremloremloremloremloremlorem loremloremloremloremloremloremloremloremlorem oremloremloremloremloremloremlorem loremloremloremloremloremloremloremloremlorem",
+      "createdAt": "2021/02/11",
+      "imageSource": "https://via.placeholder.com/100x100"
     }
   ]
 }
