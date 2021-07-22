@@ -1,7 +1,7 @@
 import React from "react";
-import Nav from "../nav";
+import Nav from "../organisms/nav";
 import styles from "../../styles/Home.module.css";
-import MenuArea from "../menuArea";
+import MenuArea from "../MenuArea";
 
 export default function AppLayout({ children }) {
 	return (

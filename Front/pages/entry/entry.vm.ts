@@ -1,8 +1,10 @@
 import { makeAutoObservable, observable } from "mobx";
-import { getContentsList } from "../pages/_api";
+import { getContentsList } from "../_api";
 
 class ContentStore {
 	_contentList = observable.box([]);
+
+	private _state = "";
 
 	constructor() {
 		makeAutoObservable(this);
@@ -23,14 +25,14 @@ class ContentStore {
 	// }
 
 	async getList() {
-		this.state = "pending";
+		this._state = "pending";
 		try {
 			const posts = await getContentsList();
 			this._contentList.set(posts);
-			this.state = "done";
+			this._state = "done";
 			return posts;
 		} catch (error) {
-			this.state = "error";
+			this._state = "error";
 			throw error;
 		}
 	}
