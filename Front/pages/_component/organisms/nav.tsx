@@ -1,8 +1,7 @@
 import React, { useCallback } from "react";
-import styles from "../styles/Home.module.css";
 import Link from "next/dist/client/link";
 
-export default function nav() {
+const Component: React.FunctionComponent = () => {
 	const ClickHandler = useCallback((e) => {
 		// TODO: 버튼 클릭 시, 메뉴 카테고리 팝업
 		// e.target.styles.display = "none";
@@ -11,7 +10,7 @@ export default function nav() {
 
 	return (
 		<nav id="nav">
-			<ul className={styles.nav}>
+			<ul>
 				<Link href="/">
 					<h1>
 						<a>blog title.</a>
@@ -33,3 +32,5 @@ export default function nav() {
 		</nav>
 	);
 }
+
+export default Component;

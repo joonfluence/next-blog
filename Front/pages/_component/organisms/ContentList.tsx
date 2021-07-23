@@ -1,18 +1,30 @@
 import React, { useEffect, useState } from "react";
-import styles from "../../styles/Home.module.css";
 import { Grid } from "@material-ui/core";
 import Card from "../molecules/card";
-import ContentsStore from "../../store/ContentsStore";
-// import { getContentsList } from "../../pages/_api";
+import ContentsStore from "../../entry/entry.vm";
+import styled from 'styled-components';
 
-export default function ContentList({ id, className, isBottom, listName }) {
+const Article = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  border-bottom: 1px solid #eaeaea;
+`;
+
+type Props = {
+	id: string,
+	isBottom: string,
+	listName: string,
+}
+
+const Component: React.FunctionComponent<Props> = ({ id, isBottom, listName }) => {
 	const [post, setPost] = useState([]);
-	useEffect(async () => {
-		setPost(await ContentsStore.getList());
-	}, []);
+	// TODO : VM 연동 작업 필요 
+	// useEffect(async () => (setPost(await ContentsStore.getList()))
+	// , []);
 
 	return (
-		<section id={id} className={className}>
+		<Article id={id}>
 			<div>
 				{!isBottom && <h4>{listName}</h4>}
 				<Grid container spacing={1}>
@@ -24,11 +36,12 @@ export default function ContentList({ id, className, isBottom, listName }) {
 								isBottom={isBottom}
 								key={item.id}
 								content={item}
-								className={styles.article__Top}
 							/>
 						))}
 				</Grid>
 			</div>
-		</section>
+		</Article>
 	);
 }
+
+export default Component;
