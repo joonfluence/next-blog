@@ -1,7 +1,18 @@
 import React, { useCallback } from "react";
 import Link from "next/dist/client/link";
+import styled from 'styled-components';
 
-const Component: React.FunctionComponent = () => {
+const Nav = styled.nav`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 60px;
+	border-bottom: 1px solid #eaeaea;
+	overflow: auto;
+	/* padding-left: 24px; */
+`;
+
+function Component() {
 	const ClickHandler = useCallback((e) => {
 		// TODO: 버튼 클릭 시, 메뉴 카테고리 팝업
 		// e.target.styles.display = "none";
@@ -9,7 +20,7 @@ const Component: React.FunctionComponent = () => {
 	}, []);
 
 	return (
-		<nav id="nav">
+		<Nav id="nav">
 			<ul>
 				<Link href="/">
 					<h1>
@@ -29,7 +40,7 @@ const Component: React.FunctionComponent = () => {
 				</li>
 				<button onClick={ClickHandler}>X</button>
 			</ul>
-		</nav>
+		</Nav>
 	);
 }
 

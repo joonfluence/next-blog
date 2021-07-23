@@ -1,10 +1,22 @@
-import React from "react";
+import React, { FC } from "react";
 import Link from "next/link";
 import { Grid } from "@material-ui/core";
 
-export default function card({ content, className, isBottom, sm }) {
+export type Props = {
+	content: {
+		id: string,
+		imageSource: string,
+		title: string,
+		createdAt: Date,
+		content: string,
+	},
+	isBottom?: boolean,
+	sm: number,
+};
+
+const Component: FC<Props> = ({ content, isBottom, sm }) => {
 	return (
-		<Grid item xs={12} sm={sm} className={className}>
+		<Grid item xs={12} sm={sm}>
 			<Link href={`/entry/${content.id}`}>
 				<a>
 					<div>{!isBottom && <img src={content.imageSource} />}</div>
@@ -19,3 +31,5 @@ export default function card({ content, className, isBottom, sm }) {
 		</Grid>
 	);
 }
+
+export default Component;

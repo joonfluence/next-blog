@@ -1,31 +1,59 @@
 import React from "react";
 import Nav from "../organisms/nav";
-import styles from "../../styles/Home.module.css";
 import MenuArea from "../MenuArea";
+import styled from 'styled-components';
+
+const WebAccess = styled.p`
+  position: absolute;
+  color: white;
+  background-color: rgb(151, 151, 245);
+  width: 100%;
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+  top: -9999px;`
+
+  const SearchArea = styled.div`
+  display: none;
+  z-index: 100;
+  background-color: white;
+  width: 100%;
+  flex: 1 1;
+  `;
+
+  const Footer = styled.footer`
+  /* display: none; */
+  display: flex;
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default function AppLayout({ children }) {
 	return (
-		<div className={styles.wrapper}>
-			<p className={styles.webAccess}>
+		<div>
+			<WebAccess>
 				<a href="#content-bottom">하위 본문으로 이동</a>
-			</p>
-			<header id="header" className={styles.header}>
+			</WebAccess>
+			<header id="header">
 				<Nav />
-				<div className={styles.search_area}>
+				<SearchArea>
 					<div>
 						<input type="text" placeholder="검색어를 입력하세요" />
 					</div>
-				</div>
+				</SearchArea>
 				<div>
 					<MenuArea />
 				</div>
 			</header>
 			{/* TODO: onClick -> display: None */}
-			<main className={styles.container}>{children}</main>
+			<main>{children}</main>
 			{/* TODO: onClick -> display: None */}
-			<footer id="footer" className={styles.footer}>
-				footer 입니다.
-			</footer>
+			<Footer id="footer">
+				Footer 입니다.
+			</Footer>
 		</div>
 	);
 }

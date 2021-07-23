@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Grid } from "@material-ui/core";
-import Card from "../molecules/card";
+import Card from "../molecules/Card";
 import ContentsStore from "../../entry/entry.vm";
 import styled from 'styled-components';
 
@@ -11,10 +11,10 @@ const Article = styled.section`
   border-bottom: 1px solid #eaeaea;
 `;
 
-type Props = {
-	id: string,
-	isBottom: string,
-	listName: string,
+export type Props = {
+	id?: string,
+	isBottom?: string,
+	listName?: string,
 }
 
 const Component: React.FunctionComponent<Props> = ({ id, isBottom, listName }) => {
